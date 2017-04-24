@@ -32,7 +32,7 @@ module type MYMONAD = sig
   val pass: 'a m -> 'b m -> 'b m
 end
 
-module MyList = struct
+module MyModuleList = struct
   type 'a f = 'a list
 
   let mempty = MyEmptyList
@@ -42,7 +42,7 @@ module MyList = struct
     | MyList (hd, rest) -> mappend rest (MyList (hd, l2))
     | MyEmptyList -> l2
 
-  let rec mconcat = myfoldr (fun x i -> mappend i x) MyEmptyList
+  let rec mconcat l = myfoldr (fun x i -> mappend i x) MyEmptyList l
 
   let rec myfmap f = function
     | MyList (hd, rest) -> MyList ((f hd), (myfmap f rest))
@@ -59,8 +59,9 @@ module MyList = struct
 		 
   let bind xs f = mconcat (myfmap f xs)
 
-  (*let run = function 
-    | MyList (x, rest) -> x *)
+  let run = function 
+    | MyList (x, rest) -> x
+    | MyEmptyList -> failwith "empty"
 
   let pass x y = bind x (fun _ -> y)
 

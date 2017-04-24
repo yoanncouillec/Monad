@@ -1,7 +1,7 @@
 class realworld =
 object (self)
   method read ()  =
-    read_line()
+    (read_line(), self)
   method print (c:string) =
     let _ = print_string c in
     ((), self)
@@ -18,9 +18,8 @@ let bind (f:'a io) (g:'a -> 'b io) : 'b io =
 let run (m: 'a io) w : 'a = 
   fst (m w)
 
-
 let readImpure : string io =
-  fun rw -> let s = rw#read() in (s, rw)
+  fun rw -> rw#read()
 
 let printImpure (c:string) : unit io =
   fun rw -> rw#print(c)
