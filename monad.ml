@@ -41,14 +41,16 @@ let print2 s w =
   print_endline s ;
   (s, w+1)
 
+let nil w = ("", w+1)
+
 let _ = 
   let w = 0 in
   Io.bindeq
-    (fun w ->  Io.bind (fun w -> print2 "Your name ?" w) read2 w)
+    (fun w ->  Io.bind (fun w -> print2 "Hello, what is your name?" w) read2 w)
     (fun a w ->
       Io.bindeq
-	(fun w -> Io.bind (fun w -> print2 "How old?" w) read2 w)
-	(fun b w -> ((a, b), w))
+	(fun w -> Io.bind (fun w -> print2 "How old are you?" w) read2 w)
+	(fun b w -> Io.bind (fun w -> print2 ("Hey "^a^", you still rock at "^b^"!") w) nil w)
 	w)
     w
 
