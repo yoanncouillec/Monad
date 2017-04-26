@@ -1,4 +1,4 @@
-all: io.out io_no_sugar.out
+all: io.out io_no_sugar.out io_test.out
 
 %.out:%.hs
 	ghc $^ -o $@

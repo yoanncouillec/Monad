@@ -1,4 +1,3 @@
-import System.IO
 main =
     putStrLn "Hello, what's your name?" >>
     getLine >>= \ name ->

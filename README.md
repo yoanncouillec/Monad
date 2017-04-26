@@ -65,6 +65,26 @@ You have noticed that ```return``` has not been desugared. Its type is
 The IO monad is the way to communicate with the real world in a pure
 functional programming language like Haskell.
 
+### Back to comparison with C
+
+* Sequence: is an ordered set of instructions. For instance:
+
+```c
+int c = 3 ; printf("%d\n",c) ; return c ;
+```
+
+The same in Haskell is:
+
+```haskell
+return 3 >>= \ c -> putStrLn(show c) >> return c
+```
+
+A sequence of instructions in C is equivalent to an expression in
+Haskell.
+
+Here, we are touching the basic, and very important, differences
+between imperative programming and functional programming.
+
 ## License
 
 Monad is made under the terms of the MIT license.
