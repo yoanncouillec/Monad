@@ -15,6 +15,7 @@ explanations.
 * Go into `src/hs` and compile with `make` to generate the binary
 
 Here is the code:
+
 ````haskell
 main = do  
     putStrLn "Hello, what's your name?"  
@@ -23,6 +24,7 @@ main = do
     age <- getLine  
     putStrLn ("Hey " ++ name ++ ", you rock!")
 ```
+
 ## License
 
 Monad is made under the terms of the MIT license.
