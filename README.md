@@ -59,10 +59,13 @@ main =
 
 Got it? Welcome to functional programming :)
 
-You have noticed that ```return``` has not been desugared. Its type
-is ```IO Integer``` here. It's the way to build a monad from another
-type. The IO monad is the way to communicate with the real world in a
-pure functional programming language like Haskell.
+You have noticed that ```return``` has not been desugared. 
+
+Its type is ```IO Integer``` here. It's the way to build a monad from
+another type. 
+
+The IO monad is the way to communicate with the real world in a pure
+functional programming language like Haskell.
 
 ## License
 
