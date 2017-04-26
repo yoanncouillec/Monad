@@ -44,7 +44,7 @@ two codes have absolutely nothing in common.
 
 ### What happened in Haskell?
 
-The ```do``` notation, the assignement and the ```return``` are all
+The ```do``` notation, the assignement ```<-``` and the ```return``` are all
 implemented with a monad.
 
 ## License
