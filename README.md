@@ -59,6 +59,8 @@ main =
 
 Got it? Welcome to functional programming :)
 
+You have noticed that ````return````has not been desugared. Its type is ```IO Integer``` here.
+
 ## License
 
 Monad is made under the terms of the MIT license.
