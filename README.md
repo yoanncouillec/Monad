@@ -16,7 +16,7 @@ explanations.
 
 Here is the code:
 
-````haskell
+```haskell
 main = do  
     putStrLn "Hello, what's your name?"  
     name <- getLine  
