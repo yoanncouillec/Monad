@@ -87,13 +87,7 @@ between imperative programming and functional programming.
 
 * Assignement: binds a value to a variable. For instance:
 
-```c 
-int x = 4 ; ...
-``` 
-VS 
-```haskell 
-(\x -> ...) 4
-```
+``` int x = 4 ; ... ``` VS ```haskell (\x -> ...) 4 ```
 
 ## License
 
