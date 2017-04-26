@@ -1,7 +1,7 @@
 # Monad for dummies
 
 If like me you think monad is a pain in the a** to understand, you
-would like to understand it with code rather than for ever
+would like to understand it with code rather than with "for ever"
 explanations.
 
 * **Explore:** We will explore monad in different languages.
