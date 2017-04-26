@@ -3,5 +3,5 @@ main = do
     name <- getLine  
     putStrLn "Your age?"  
     age <- getLine  
-    putStrLn ("Hey " ++ name ++ ", you rock!")
+    putStrLn ("Hey " ++ name ++ ", you rock at " ++ age ++ "!")
     

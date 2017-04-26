@@ -22,7 +22,7 @@ main = do
     name <- getLine  
     putStrLn "Your age?"  
     age <- getLine  
-    putStrLn ("Hey " ++ name ++ ", you rock!")
+    putStrLn ("Hey " ++ name ++ ", you rock at " ++ age ++ !")
 ```
 
 You think this Haskell code does the same thing as the following C code?
@@ -36,6 +36,9 @@ void main() {
     printf("Hey %s, you rock at %d!\n", name, age);
 }
 ```
+
+After knowing what a monad is and how it works you will see that those
+two codes have absolutely nothing in common.
 
 ## License
 
