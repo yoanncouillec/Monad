@@ -6,7 +6,7 @@ explanations.
 
 * **Explore:** monad in different languages.
 
-* **Create:** our own monad and see it's like a wrapper.
+* **Create:** our own monad and see it's like a wrapper for a context.
 
 ## Quick start
 
