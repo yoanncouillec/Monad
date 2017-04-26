@@ -26,10 +26,9 @@ main = do
     return 0
 ```
 
-You think this Haskell code does the same thing as the following C code?
+You think this Haskell code does the same thing than the following C code?
 
 ```c
-#include <stdio.h>
 int main() {
     printf("Hello, what's your name?\n");
     char name[16]; scanf("%s", name);
