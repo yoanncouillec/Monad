@@ -39,7 +39,7 @@ int main() {
 }
 ```
 
-After knowing what a monad is and how it works you will be convinced that those
+After knowing what a monad is and how it works, you will be convinced that those
 two codes have absolutely nothing in common.
 
 ### What happened in Haskell?
