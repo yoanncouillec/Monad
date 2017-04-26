@@ -10,7 +10,7 @@ explanations.
 
 ## Quick start
 
-### Haskell without knowing you use monads
+### Haskell or using monads without knowing it
 
 * Go into `src/hs` and compile with `make` to generate the binary
 
