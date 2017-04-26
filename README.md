@@ -23,22 +23,30 @@ main = do
     putStrLn "Your age?"  
     age <- getLine  
     putStrLn ("Hey " ++ name ++ ", you rock at " ++ age ++ !")
+    return 0
 ```
 
 You think this Haskell code does the same thing as the following C code?
 
 ```c
-void main() {
+#include <stdio.h>
+int main() {
     printf("Hello, what's your name?\n");
     char name[16]; scanf("%s", name);
     printf("Your age?\n");
     int age; scanf("%d", &age);
     printf("Hey %s, you rock at %d!\n", name, age);
+    return 0;
 }
 ```
 
 After knowing what a monad is and how it works you will be convinced that those
 two codes have absolutely nothing in common.
+
+### What happened in Haskell?
+
+The ```do``` notation, the assignement and the ```return``` are all
+implemented with a monad.
 
 ## License
 
