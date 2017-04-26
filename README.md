@@ -95,6 +95,8 @@ VS
 (\x -> ...) 4
 ```
 
+* Return: ends the computation for C, builds a monad in Haskell.
+
 ## License
 
 Monad is made under the terms of the MIT license.
