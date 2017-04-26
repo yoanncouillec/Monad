@@ -1,7 +1,5 @@
 (module monad)
 
-(print "Monad")
-
 (define (>> action1 action2 world)
    (let ((res1 (action1 world)))
       (action2 (cadr res1))))
@@ -24,15 +22,13 @@
 
 ;;; MAIN ;;;
 
-(define (main2 world)
-   (print "main2")
-   (>>=
-      (lambda (world) (getchar world))
-      (lambda (a world) (print-world a world))
-      world))
+(define (main0 world)
+  (>>=
+   (lambda (world) (list "a" world))
+   (lambda (a world) (print-world a world))
+   world))
 
-(define (main3 world)
-   (print "main3")
+(define (main1 world)
    (>>=
       (lambda (world)
 	 (>>
@@ -46,12 +42,16 @@
 		  (lambda (world) (print-world "How old are you?" world))
 		  getchar
 		  world))
-	    (lambda (b world) (list (list a b) world))
+	    (lambda (b world) (print-world (string-append 
+					    "Hey "
+					    (symbol->string a)
+					    "! You still rock at "
+					    (number->string b) "!") 
+					   world))
 	    world))
       world))
 
 (define (main4 world)
-   (print "main4")
    (>>=
       getchar ; (lambda (world) (getchar world))
       (lambda (a world) (return (* a 2) world))
@@ -59,6 +59,4 @@
 
 ;;; EXECUTE ;;;
 
-(print (main2 0))
-(print (main3 0))
-(print (main4 0))
+(main1 0)
