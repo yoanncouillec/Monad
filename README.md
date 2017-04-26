@@ -4,9 +4,9 @@ If like me you think monad is a pain in the a** to understand, you
 would like to understand it with code rather than with "for ever"
 explanations.
 
-* **Explore:** We will explore monad in different languages.
+* **Explore:** monad in different languages.
 
-* **Create:** We will create our own monad and you will see that it's nothing more than a wrapper...
+* **Create:** our own monad and you will see that it's nothing more than a wrapper...
 
 ## Quick start
 
