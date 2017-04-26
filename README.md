@@ -27,7 +27,7 @@ main = do
 
 You think this Haskell code does the same thing as the following C code?
 
-```
+```c
 void main() {
     printf("Hello, what's your name?\n");
     char name[16]; scanf("%s", name);
@@ -35,6 +35,7 @@ void main() {
     int age; scanf("%d", &age);
     printf("Hey %s, you rock at %d!\n", name, age);
 }
+```
 
 ## License
 
