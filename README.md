@@ -85,6 +85,10 @@ Haskell.
 Here, we are touching the basic, and very important, differences
 between imperative programming and functional programming.
 
+* Assignement: binds a value to a variable. For instance:
+
+```c int x = 4``` VS ```haskell (\x -> ...) 4```
+
 ## License
 
 Monad is made under the terms of the MIT license.
