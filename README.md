@@ -22,7 +22,7 @@ main = do
     name <- getLine  
     putStrLn "Your age?"  
     age <- getLine  
-    putStrLn ("Hey " ++ name ++ ", you rock at " ++ age ++ !")
+    putStrLn ("Hey " ++ name ++ ", you rock at " ++ age ++ "!")
     return 0
 ```
 
@@ -44,8 +44,20 @@ two codes have absolutely nothing in common.
 
 ### What happened in Haskell?
 
-The ```do``` notation, the assignement ```<-``` and the ```return``` are all
-implemented with a monad.
+The ```do``` notation, assignement ```<-``` and ```return``` are all
+implemented with monads. In other words, this is syntactic sugar.
+
+```haskell
+main =
+    putStrLn "Hello, what's your name?" >>= \_ ->
+    getLine  >>= \ name ->
+    putStrLn "Your age?"   >>= \ _ ->
+    getLine >>= \ age ->
+    putStrLn ("Hey " ++ name ++ ", you rock at " ++ age ++ "!") >>
+    return 0
+```
+
+Got it? Welcome to functional programming :)
 
 ## License
 
