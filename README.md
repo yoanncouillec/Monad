@@ -59,7 +59,8 @@ main =
 
 Got it? Welcome to functional programming :)
 
-You have noticed that ````return````has not been desugared. Its type is ```IO Integer``` here.
+You have noticed that ````return``` has not been desugared. Its type
+is ```IO Integer``` here.
 
 ## License
 
