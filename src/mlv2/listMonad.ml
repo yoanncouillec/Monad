@@ -21,8 +21,9 @@ let rec replicate =  fun n -> fun a ->
 			      match n with
 			      | 0 -> ListMonadEmpty
 			      | n -> ListMonadValue (a, replicate (n-1) a)
-let rec show = fun f -> fun m ->
-			match m with 
-			| ListMonadEmpty -> ""
-			| ListMonadValue (x, xs) -> (f x)^(show f xs)
+let rec string_of_monad = fun f -> fun m ->
+				   match m with 
+				   | ListMonadEmpty -> ""
+				   | ListMonadValue (x, xs) -> (f x)^(string_of_monad f xs)
 					    
+let show = fun f -> fun m -> print_endline (string_of_monad f m)

@@ -13,12 +13,14 @@ let divide (a:int) (b:int) : 'a ErrorMonad.m =
   | 0 -> ErrorMonad.error_message "Division by 0"
   | _ -> ErrorMonad.return (a/b)
 
-let err = ErrorMonad.run
+let _ = 
+  ErrorMonad.show string_of_int
   (ErrorMonad.bind (ErrorMonad.bind (ErrorMonad.return 1) (fun x ->
    (divide x x))) (fun y ->
    ErrorMonad.return y))
 
-let list = ListMonad.show (fun x -> x)
+let _ =
+  ListMonad.show (fun x -> x)
   (ListMonad.bind 
   (ListMonad.bind 
   (ListMonad.bind 
@@ -28,8 +30,3 @@ let list = ListMonad.show (fun x -> x)
    ListMonad.replicate 3 y)) (fun z ->
    ListMonad.replicate 4 z)) (fun t ->
    ListMonad.return t))
-
-let _ =
-  (match err with _ as n -> print_endline (string_of_int n));
-  print_endline list
-			   

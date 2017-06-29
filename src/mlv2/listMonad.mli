@@ -9,4 +9,5 @@ val foldr: ('a -> 'b -> 'b) -> 'a m -> 'b -> 'b
 val concat: 'a m m -> 'a m
 val duplicate: 'a -> 'a m
 val replicate: int -> 'a -> 'a m
-val show: ('a -> string) -> 'a m -> string
+val string_of_monad: ('a -> string) -> 'a m -> string
+val show: ('a -> string) -> 'a m -> unit

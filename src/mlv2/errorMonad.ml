@@ -11,3 +11,9 @@ let error_message s = throw (ErrorMessage s)
 let run = fun m -> match m with ErrorMonadValue v -> v
 			      | ErrorMonadError e -> (match e with Error -> failwith "Error"
 								 | ErrorMessage s -> failwith s)
+let string_of_error = function Error -> "Error" | ErrorMessage s -> "Error: "^s
+let string_of_monad = fun f -> fun m ->
+			       match m with
+			       | ErrorMonadValue v -> f v
+			       | ErrorMonadError e -> string_of_error e
+let show = fun f -> fun m -> print_endline (string_of_monad f m)
