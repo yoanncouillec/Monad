@@ -6,8 +6,10 @@ all:
 	ocamlc -c maybeMonad.ml
 	ocamlc -c errorMonad.mli
 	ocamlc -c errorMonad.ml
+	ocamlc -c listMonad.mli
+	ocamlc -c listMonad.ml
 	ocamlc -c main.ml
-	ocamlc errorMonad.cmo idMonad.cmo maybeMonad.cmo main.cmo -o main.out
+	ocamlc listMonad.cmo errorMonad.cmo idMonad.cmo maybeMonad.cmo main.cmo -o main.out
 
 %.cmo: %.ml
 	ocamlc -c $^ -o $@

@@ -15,8 +15,21 @@ let divide (a:int) (b:int) : 'a ErrorMonad.m =
 
 let err = ErrorMonad.run
   (ErrorMonad.bind (ErrorMonad.bind (ErrorMonad.return 1) (fun x ->
-  (divide x x))) (fun y ->
-  ErrorMonad.return y))
+   (divide x x))) (fun y ->
+   ErrorMonad.return y))
+
+let list = ListMonad.show (fun x -> x)
+  (ListMonad.bind 
+  (ListMonad.bind 
+  (ListMonad.bind 
+  (ListMonad.bind 
+  (ListMonad.return "bunny") (fun x -> 
+   ListMonad.duplicate x)) (fun y ->
+   ListMonad.replicate 3 y)) (fun z ->
+   ListMonad.replicate 4 z)) (fun t ->
+   ListMonad.return t))
 
 let _ =
-  match err with _ as n -> print_endline (string_of_int n)
+  (match err with _ as n -> print_endline (string_of_int n));
+  print_endline list
+			   
