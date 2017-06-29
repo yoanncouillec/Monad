@@ -28,3 +28,4 @@ let rec string_of_monad = fun f -> fun m ->
 					    
 let show = fun f -> fun m -> print_endline (string_of_monad f m)
 let (>>=) = bind
+
