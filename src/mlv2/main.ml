@@ -17,3 +17,6 @@ let err = ErrorMonad.run
   (ErrorMonad.bind (ErrorMonad.bind (ErrorMonad.return 1) (fun x ->
   (divide x x))) (fun y ->
   ErrorMonad.return y))
+
+let _ =
+  match err with _ as n -> print_endline (string_of_int n)
