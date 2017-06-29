@@ -35,9 +35,11 @@ let _ =
   let (>>=) = ListMonad.(>>=) in
   let return = ListMonad.return in
   let show = ListMonad.show (fun x -> x) in
-  let result = 
+  let duplicate = ListMonad.duplicate in
+  let replicate = ListMonad.replicate in
+  let result =
     ((return "duck") >>= (fun x -> 
-      ListMonad.duplicate x) >>= (fun y ->
-      ListMonad.replicate 3 y) >>= (fun z ->
+      duplicate x) >>= (fun y ->
+      replicate 3 y) >>= (fun z ->
       return z)) 
   in show result
