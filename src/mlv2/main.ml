@@ -30,3 +30,12 @@ let _ =
    ListMonad.replicate 3 y)) (fun z ->
    ListMonad.replicate 4 z)) (fun t ->
    ListMonad.return t))
+
+
+let _ =
+  let (>>=) = ListMonad.(>>=) in
+  ListMonad.show (fun x -> x)
+  ((ListMonad.return "duck") >>= (fun x -> 
+    ListMonad.duplicate x) >>= (fun y ->
+    ListMonad.replicate 3 y) >>= (fun z ->
+    ListMonad.return z))

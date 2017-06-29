@@ -11,3 +11,4 @@ val duplicate: 'a -> 'a m
 val replicate: int -> 'a -> 'a m
 val string_of_monad: ('a -> string) -> 'a m -> string
 val show: ('a -> string) -> 'a m -> unit
+val (>>=): 'a m -> ('a -> 'b m) -> 'b m

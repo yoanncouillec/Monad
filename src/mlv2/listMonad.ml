@@ -27,3 +27,4 @@ let rec string_of_monad = fun f -> fun m ->
 				   | ListMonadValue (x, xs) -> (f x)^(string_of_monad f xs)
 					    
 let show = fun f -> fun m -> print_endline (string_of_monad f m)
+let (>>=) = bind
