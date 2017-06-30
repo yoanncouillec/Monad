@@ -43,3 +43,16 @@ let _ =
       replicate 3 y) >>= (fun z ->
       return z)) 
   in show result
+
+let _ = 
+  let (>>=) = StateMonad.(>>=) in
+  let return = StateMonad.return in
+  let double = StateMonad.double in
+  let tostring = StateMonad.tostring in
+  let run = StateMonad.run in
+  let result = run
+  (return 4 >>= (fun x -> 
+   double x >>= (fun y ->
+   tostring string_of_int y >>= (fun z ->
+   return z)))) in
+  print_endline result
