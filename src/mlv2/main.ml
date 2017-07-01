@@ -48,11 +48,22 @@ let _ =
   let (>>=) = StateMonad.(>>=) in
   let return = StateMonad.return in
   let double = StateMonad.double in
-  let tostring = StateMonad.tostring in
-  let run = StateMonad.run in
-  let result = run
+  let result = StateMonad.getState
   (return 4 >>= (fun x -> 
    double x >>= (fun y ->
-   tostring string_of_int y >>= (fun z ->
-   return z)))) in
-  print_endline result
+   double y >>= (fun z ->
+   return (string_of_int z)))))
+  in print_endline (string_of_int result)
+
+let _ =
+  let (>>=) = IoMonad.(>>=) in
+  let return = IoMonad.return in
+  let run = IoMonad.run in
+  let getLine = IoMonad.getLine in
+  let put = IoMonad.put in
+  let shout = fun s -> String.uppercase s in
+  let result = run
+  (put "Whisper something: " >>= (fun _ ->
+  (getLine()) >>= (fun line ->
+  return (shout line))))
+  in print_endline result
